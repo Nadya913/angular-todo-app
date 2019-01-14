@@ -1,4 +1,5 @@
 import { TodoAppPage } from './app.po';
+import {browser, protractor} from 'protractor';
 
 describe('todo-app App', () => {
   let page: TodoAppPage;
@@ -7,8 +8,15 @@ describe('todo-app App', () => {
     page = new TodoAppPage();
   });
 
-  it('should display message saying app works', () => {
+ /* it('should display message saying app works', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('app works!');
+  });*/
+
+  it('test ', () => {
+    browser.waitForAngularEnabled(false);
+    browser.get('http://www.makemytrip.com/');
+    page.setFromValue();
+    expect (page.getFromText()).toEqual('New Delhi (DEL)');
   });
 });
