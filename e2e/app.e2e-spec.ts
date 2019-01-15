@@ -24,5 +24,6 @@ describe('todo-app App', () => {
     page.setDepartDate();
     page.setReturnDate();
     browser.sleep(5000);
+    page.today();
   });
 });
