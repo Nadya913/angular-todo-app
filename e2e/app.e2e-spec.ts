@@ -23,5 +23,6 @@ describe('todo-app App', () => {
     expect (page.getToText()).toEqual('Colombo (CMB)');
     page.setDepartDate();
     page.setReturnDate();
+    browser.sleep(5000);
   });
 });

@@ -33,7 +33,9 @@ export class TodoAppPage {
 
   setReturnDate () {
     element (by.id('hp-widget__return')).click();
-    element.all (by.css('div.dateFilterReturn.hasDatepicker td[data-handler=selectDay]')).first().click();
+    const EC = protractor.ExpectedConditions;
+    browser.wait(EC.elementToBeClickable(element.all (by.css('div.dateFilterReturn.hasDatepicker td[data-handler=selectDay]')).last()), 2000);
+    element.all (by.css('div.dateFilterReturn.hasDatepicker td[data-handler=selectDay]')).last().click();
   }
 
 
