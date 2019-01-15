@@ -14,9 +14,14 @@ describe('todo-app App', () => {
   });*/
 
   it('test ', () => {
+    browser.driver.manage().window().maximize();
     browser.waitForAngularEnabled(false);
     browser.get('http://www.makemytrip.com/');
     page.setFromValue();
     expect (page.getFromText()).toEqual('New Delhi (DEL)');
+    page.setToValue();
+    expect (page.getToText()).toEqual('Colombo (CMB)');
+    page.setDepartDate();
+    page.setReturnDate();
   });
 });
